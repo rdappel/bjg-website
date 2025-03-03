@@ -23,3 +23,14 @@ navLinks.forEach(link => {
 		window.scrollTo({ top, behavior })
 	})
 })
+
+const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add("visible")
+		}
+	})
+}, { threshold: 0.3 })
+
+const elements = document.querySelectorAll(".auto-show")
+elements.forEach(element => observer.observe(element))

@@ -74,6 +74,7 @@ nav {
 	background-color: rgba(255, 255, 255, 0.95);
 	position: fixed;
 	display: block;
+	z-index: 2;
 }
 
 nav #social {
@@ -194,6 +195,12 @@ main section h1 {
 	display: none;
 }
 
+#games {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 #games .game {
 	padding: 20px;
 	color: black;
@@ -214,6 +221,10 @@ main section h1 {
 	margin: 0 0 20px 20px;
 }
 
+#games h1 {
+	display: none;
+}
+
 #games .game h2 {
 	font-size: 2rem;
 	margin-bottom: 10px;
@@ -223,6 +234,66 @@ main section h1 {
 	font-size: 1rem;
 	line-height: 1.5;
 }
+
+
+#news {
+	background-color: hsla(0, 0%, 26%, 0.98);
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#news h1 {
+	display: block;
+	text-align: center;
+}
+
+#news article {
+	color: rgb(0, 0, 0);
+	background-color: #e6e6e6;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 1rem;
+	padding: 20px;
+	margin-top: 20px;
+	max-width: 1000px;
+}
+
+
+#news article:first-child {
+	margin-top: 0;
+}
+
+#news article h1 {
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+	text-align: justify;
+}
+
+#news article h2 {
+	font-size: 1.1rem;
+	font-style: italic;
+	margin-bottom: 10px;
+	text-align: justify;
+	color: #686868;
+}
+
+#news article p {
+	font-size: 1rem;
+	line-height: 1.5;
+	padding: 5px;
+}
+
+#news article ul {
+	padding-left: 28px;
+}
+
+#news article a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+
 
 #about {
 	text-align: center;
@@ -243,10 +314,6 @@ main section h1 {
 	max-width: 800px;
 	margin: 0 auto;
 	text-align: justify;
-}
-
-#news {
-	display: none;
 }
 
 footer {
@@ -374,6 +441,35 @@ footer {
 		display: block;
 	}
 } */
+
+.auto-show {
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.auto-show.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+}
+
+.gradientButton {
+	font-size: 1.2em;
+	margin: 20px;
+	padding: 15px 45px;
+	text-align: center;
+	transition: 0.5s;
+	color: black;
+	border: 0;
+	border-radius: 10px;
+	display: block;
+	background-image: linear-gradient(to right, #00a1e6 0%, #59b136 100%);
+	cursor: pointer;
+}
+
+.gradientButton:hover {
+	transform: scale(1.1);
+}
 
 
 @media screen and (max-width: 600px) {
